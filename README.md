@@ -3,13 +3,13 @@
 telegram bot project for streaming video on telegram video chat, powered by [tgcalls](https://github.com/MarshalX/tgcalls) and [pyrogram](https://github.com/pyrogram/pyrogram)
 
 <p align="center">
-  <a href="https://github.com/youtubeslgeekshow/TG-video-stream-bot/stargazers">
-    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/TG-video-stream-bot?style=social">
+  <a href="https://github.com/youtubeslgeekshow/Video-call-bot/stargazers">
+    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?style=social">
 
   </a>
   
-  <a href="https://github.com/youtubeslgeekshow/TG-video-stream-bot/fork">
-    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/TG-video-stream-bot?label=Fork&style=social">
+  <a href="https://github.com/youtubeslgeekshow/Video-call-bot/fork">
+    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?label=Fork&style=social">
 
   </a>  
 </p>
@@ -35,10 +35,10 @@ Get pyrogram (p)  `SESSION` from here:
 ##  deploy to Heroku 
 The easy way to host this bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/TG-video-stream-bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot)
 
 # Deploy On Railway
-[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/youtubeslgeekshow/TG-video-stream-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
+[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/youtubeslgeekshow/Video-call-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
   
 ## VPS Deployment
 ```
