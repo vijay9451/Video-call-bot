@@ -22,7 +22,7 @@ import ffmpeg
 import asyncio
 from asyncio import sleep
 from config import Config
-from bot.safone.nopm import User
+from bot.video.nopm import User
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
@@ -42,19 +42,19 @@ group_call_factory = GroupCallFactory(User, GroupCallFactory.MTPROTO_CLIENT_TYPE
 @Client.on_message(filters.command(["stream", f"stream@{USERNAME}"]) & filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private))
 async def stream(client, m: Message):
     if 1 in STREAM:
-        await m.reply_text("🤖 **Please Stop The Existing Stream!**")
+        await m.reply_text("✅ **Please Stop The Existing Stream!**")
         return
     media = m.reply_to_message
     if not media:
-        await m.reply_text("❗ **Reply To An Video To Stream!**")
+        await m.reply_text("😕 **sorry it's not a video**\n\n» use the /stream command by replying to the video.")
         return
     elif media.video or media.document:
-        msg = await m.reply_text("🔄 **Downloading, Please Wait...**")
+        msg = await m.reply_text("🔁 **Downloading video...**\n\n💭 __this process will take quite a while depending on the size of the video.__")
         if os.path.exists(f'stream-{CHAT_ID}.raw'):
             os.remove(f'stream-{CHAT_ID}.raw')
         try:
             video = await client.download_media(media)
-            await msg.edit("🔄 **Transcoding, Please Wait...**")
+            await msg.edit("⏳ **Converting video...**")
             os.system(f'ffmpeg -i "{video}" -vn -f s16le -ac 2 -ar 48000 -acodec pcm_s16le -filter:a "atempo=0.81" stream-{CHAT_ID}.raw -y')
         except Exception as e:
             await msg.edit(f"❌ **An Error Occoured!** \n`{e}`")
@@ -65,7 +65,7 @@ async def stream(client, m: Message):
             await group_call.start(CHAT_ID)
             await group_call.set_video_capture(video)
             VIDEO_CALL[CHAT_ID] = group_call
-            await msg.edit("▶️ **Started Streaming!**")
+            await msg.edit("💡 **Video streaming started !**\n\n🟡 **join to video chat to watch the video.**")
             try:
                 STREAM.remove(0)
             except:
@@ -80,7 +80,7 @@ async def stream(client, m: Message):
                 await group_call.start(CHAT_ID)
                 await group_call.set_video_capture(video)
                 VIDEO_CALL[CHAT_ID] = group_call
-                await msg.edit("▶️ **Started Streaming!**")
+                await msg.edit("💡 **Video streaming started !**\n\n🟡 **join to video chat to watch the video.**")
                 try:
                     STREAM.remove(0)
                 except:
@@ -93,18 +93,18 @@ async def stream(client, m: Message):
             await msg.edit(f"❌ **An Error Occoured!** \n`{e}`")
             return
     else:
-        await m.reply_text("❗ **Reply To An Video To Stream!**")
+        await m.reply_text("😕 **sorry it's not a video**\n\n» use the /stream command by replying to the video.")
         return
 
 
 @Client.on_message(filters.command(["mute", f"mute@{USERNAME}"]) & filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private))
 async def mute(_, m: Message):
     if 0 in STREAM:
-        await m.reply_text("🤖 **Please Start The Stream First!**")
+        await m.reply_text("✅ **Nothing to  Stream !**")
         return
     try:
         VIDEO_CALL[CHAT_ID].pause_playout()
-        await m.reply_text("🔇 **Muted Streamer!**")
+        await m.reply_text("🔕 **Muted Streamer!**")
     except Exception as e:
         await m.reply_text(f"❌ **An Error Occoured!** \n`{e}`")
         return
@@ -112,11 +112,11 @@ async def mute(_, m: Message):
 @Client.on_message(filters.command(["unmute", f"unmute@{USERNAME}"]) & filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private))
 async def unmute(_, m: Message):
     if 0 in STREAM:
-        await m.reply_text("🤖 **Please Start The Stream First!**")
+        await m.reply_text("✅ **Nothing to  Stream !**")
         return
     try:
         VIDEO_CALL[CHAT_ID].resume_playout()
-        await m.reply_text("🔉 **Unmuted Streamer!**")
+        await m.reply_text("🔔 **Unmuted Streamer!**")
     except Exception as e:
         await m.reply_text(f"❌ **An Error Occoured!** \n`{e}`")
         return
@@ -124,11 +124,11 @@ async def unmute(_, m: Message):
 @Client.on_message(filters.command(["endstream", f"endstream@{USERNAME}"]) & filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private))
 async def endstream(client, m: Message):
     if 0 in STREAM:
-        await m.reply_text("🤖 **Please Start The Stream First!**")
+        await m.reply_text("✅ **Nothing to  Stream !**")
         return
     try:
         await VIDEO_CALL[CHAT_ID].stop()
-        await m.reply_text("⏹️ **Stopped Streaming!**")
+        await m.reply_text("⏹️ **Streaming has ended !**\n\n✅ __userbot has been disconnected from the video chat__")
         try:
             STREAM.remove(1)
         except:
@@ -160,12 +160,12 @@ allcmd = ["start", "help", f"start@{USERNAME}", f"help@{USERNAME}"] + admincmds
 async def not_chat(_, m: Message):
     buttons = [
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("CHANNEL", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("SUPPORT", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("🤖 MAKE YOUR OWN BOT 🤖", url="https://heroku.com/deploy?template=https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("Source Code", url="https://github.com/youtubeslgeekshow/Video-call-bot"),
             ]
          ]
-    await m.reply_text(text="**Sorry, You Can't Use This Bot In This Group! 🤷‍♂️ But You Can Make Your Own Bot Like This From The [Source Code](https://github.com/AsmSafone/VideoPlayerBot) 😉!**", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await m.reply_text(text="**Sorry, You Can't Use This Bot In This Group! 🤷‍♂️ But You Can Make Your Own Bot Like This From The [Source Code](https://github.com/youtubeslgeekshow/Video-call-bot) 😉!**", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
