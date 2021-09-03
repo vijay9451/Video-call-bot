@@ -38,7 +38,7 @@ async def video(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    k = await message.reply_text("🔍 **Searching, Please Wait...**")
+    k = await message.reply_text("<b> Please Wait ⏳ ...🎵 Processing Your video ... </b>")
     ydl_opts = {
         "format": "best[ext=mp4]",
         "geo-bypass": True,
@@ -66,22 +66,22 @@ async def video(_, message: Message):
             open(thumb_name, 'wb').write(thumb.content)
         except Exception as e:
             print(e)
-            await k.edit('❌ **Found Literary Noting! \nPlease Try Another Video or Use Correct Spelling.**')
+            await k.edit('❌ **Video not found.\nTry another song or maybe spell it properly.**')
             return
     except Exception as e:
         await k.edit(
-            "❗ **Enter An Video Name!** \nFor Example: `/video Avengers`"
+            "🤷‍♀️ **Give me something to search ** \n💡Example: `/video Avengers`"
         )
         print(str(e))
         return
-    await k.edit("📥 **Downloading, Please Wait...**")
+    await k.edit("📥 ** Downloading your video ... **")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             video_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        caption = f'🏷 <b>Video Name:</b> <code>{title}</code>\n🔅 <b>Video Channel:</b> <code>{channel}</code>\n👀 <b>Video Views:</b> <code>{views}</code>\n🎧 <b>Requested By:</b> {message.from_user.mention()} \n📤 <b>Uploaded By: <a href="https://t.me/AsmSafone">🇧🇩 Ｓ１ ＢＯＴＳ</a></b>'
-        buttons = InlineKeyboardMarkup([[InlineKeyboardButton("Watch On YouTube", url=f'{link}')]])
+        caption = f'🏷 <b>Video Name:</b> <code>{title}</code>\n <b>Video Channel:</b> <code>{channel}</code>\n <b>Video Views:</b> <code>{views}</code>\n <b>Requested By:</b> {message.from_user.mention()} \n <b>Uploaded By: <a href="https://t.me/szrosebot">Rosebot💫</a></b>'
+        buttons = InlineKeyboardMarkup([[InlineKeyboardButton("🎬 Watch On YouTube", url=f'{link}')]])
         await k.edit("📤 **Uploading, Please Wait...**")
         await message.reply_video(video_file, caption=caption, parse_mode='HTML', file_name=title, duration=duration, thumb=thumb_name, reply_markup=buttons, supports_streaming=True)
         await k.delete()
