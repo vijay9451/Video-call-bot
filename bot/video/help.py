@@ -24,13 +24,16 @@ from pyrogram.errors import MessageNotModified
 
 CHAT_ID = Config.CHAT_ID
 USERNAME = Config.BOT_USERNAME
-HOME_TEXT = "👋🏻 **Hi [{}](tg://user?id={})**,\n\nI'm **Video Player Bot**. \nI Can Stream Videos On Telegram Voice Chat. Made With ❤️ By @AsmSafone 😉!"
+HOME_TEXT = "👋🏻 **Hello,[{}](tg://user?id={})**,\n\nI am a telegram **video streaming Bot**. \nI Can Stream Videos On Telegram Video  Chat. Made With ❤️ By @supunmabot 😉!"
 HELP_TEXT = """
 🏷️ --**Setting Up**-- :
 
-\u2022 Start a voice chat in your channel or group.
-\u2022 Add bot and user account in chat with admin rights.
-\u2022 Then use /stream commands as a reply to an video file.
+1.) first, add me to your group.
+2.) then promote me as admin and give all permissions except anonymous admin.
+3.) add @vcpalyassistant to your group.
+4.) turn on the voice chat first before start to stream video.
+5.) type /stream (reply to video) to start streaming.
+6.) type /stop to end the video streaming.
 
 🏷️ --**Common Commands**-- :
 
@@ -46,25 +49,24 @@ HELP_TEXT = """
 \u2022 `/endstream` - end stream and left vc
 
 © **Powered By** : 
-**@AsmSafone | @SafoTheBot** 👑
+**@sl_bot_zone | @szrosebot**
 """
 
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data=="help":
-        buttons = [
+        buttons =  [
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("UPDATE CHANNEL 📢", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("SUPPORT GROUP 💬", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("MORE BOTS🤖", url="https://t.me/szbots/8"),
+                InlineKeyboardButton("SOURCE CODE📦", url="https://github.com/youtubeslgeekshow/Video-call-bot"),
             ],
             [
-                InlineKeyboardButton("BACK HOME", callback_data="home"),
-                InlineKeyboardButton("CLOSE MENU", callback_data="close"),
+                InlineKeyboardButton("🔙 BACK HOME", callback_data="home"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -77,20 +79,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
 
     elif query.data=="home":
-        buttons = [
+        buttons =  [
             [
-                InlineKeyboardButton("HOW TO USE", callback_data="help"),
+                InlineKeyboardButton("HOW TO USE ME ❓", callback_data="help"),
             ],
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("UPDATE CHANNEL 📢", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("SUPPORT GROUP 💬", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("MORE BOTS🤖", url="https://t.me/szbots/8"),
+                InlineKeyboardButton("SOURCE CODE📦", url="https://github.com/youtubeslgeekshow/Video-call-bot"),
             ],
             [
-                InlineKeyboardButton("CLOSE MENU", callback_data="close"),
+                InlineKeyboardButton("CLOSE MENU❌", callback_data="close"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -114,18 +116,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
 async def start(client, message):
     buttons = [
             [
-                InlineKeyboardButton("HOW TO USE", callback_data="help"),
+                InlineKeyboardButton("HOW TO USE ME ❓", callback_data="help"),
             ],
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("UPDATE CHANNEL 📢", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("SUPPORT GROUP 💬", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("MORE BOTS🤖", url="https://t.me/szbots/8"),
+                InlineKeyboardButton("SOURCE CODE📦", url="https://github.com/youtubeslgeekshow/Video-call-bot"),
             ],
             [
-                InlineKeyboardButton("CLOSE MENU", callback_data="close"),
+                InlineKeyboardButton("CLOSE MENU❌", callback_data="close"),
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -134,17 +136,17 @@ async def start(client, message):
 @Client.on_message(filters.command(["help", f"help@{USERNAME}"]) & (filters.chat(CHAT_ID) | filters.private))
 async def help(client, message):
     buttons = [
+
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("UPDATE CHANNEL 📢", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("SUPPORT GROUP 💬", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("MORE BOTS🤖", url="https://t.me/szbots/8"),
+                InlineKeyboardButton("SOURCE CODE📦", url="https://github.com/youtubeslgeekshow/Video-call-bot"),
             ],
             [
-                InlineKeyboardButton("BACK HOME", callback_data="home"),
-                InlineKeyboardButton("CLOSE MENU", callback_data="close"),
+                InlineKeyboardButton("🔙 BACK HOME", callback_data="home"),
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
