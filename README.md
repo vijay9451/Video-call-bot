@@ -19,8 +19,27 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
 </p>
 
 ## 🛠 Available Commands:
-- /stream (reply to video) - to start video streaming
-- /stop - to stop video streaming
+
+🏷️ --**Setting Up**-- :
+1.) first, add me to your group.
+2.) then promote me as admin and give all permissions except anonymous admin.
+3.) add @vcpalyassistant to your group.
+4.) turn on the voice chat first before start to stream video.
+5.) type /stream (reply to video) to start streaming.
+6.) type /stop to end the video streaming.
+
+🏷️ --**Common Commands**-- :
+
+-`/start` - start the bot
+- `/help` - show this help message
+- `/video` [name] - download the video
+- 
+🏷️ --**Admin Only Commands**-- :
+
+- `/stream` - stream the replied video
+- `/mute` - mute the userbot in vc
+- `/unmute` - unmute the userbot in vc
+- `/endstream` - end stream and left vc
 
 
 ## 🍁 Get STRING_SESSION from below:
