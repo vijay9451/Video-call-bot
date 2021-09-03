@@ -146,7 +146,7 @@ admincmds=["stream", "pause", "resume", "endstream", f"stream@{USERNAME}", f"pau
 
 @Client.on_message(filters.command(admincmds) & ~filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private))
 async def notforu(_, m: Message):
-    k = await m.reply_sticker("CAACAgUAAxkBAAEBpyZhF4R-ZbS5HUrOxI_MSQ10hQt65QACcAMAApOsoVSPUT5eqj5H0h4E")
+    k = await m.reply_sticker("CAACAgUAAx0CS6YhoQACog5hMX4Rpq7WaKlt4u3laQJ4apys8gACsAIAAj3CSFV4vqaasMUqMCAE")
     await sleep(5)
     await k.delete()
     try:
