@@ -31,10 +31,10 @@ buttons = [
 
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
-async def stream(client, m: Message ,s: reply_markup=button):
+async def stream(client, m: Message):
     replied = m.reply_to_message
     if not replied:
-        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vplay command by replying to the video.",s)
+        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vplay command by replying to the video.", reply_markup=button)
     elif replied.video or replied.document:
         file = replied.video or replied.document
         types = file.mime_type.split("/")
