@@ -21,6 +21,7 @@ buttons = [
                 InlineKeyboardButton("End", callback_data="vend"),
             ]
 ]
+caption =f"💡 **video streaming started!**\n\n» **join to video chat to watch the video."
 
 @Client.on_message(command(["vstream", f"vstream@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
@@ -47,7 +48,7 @@ async def stream(client, m: Message):
         	   await group_call.start(chat_id)
         	   await group_call.set_video_capture(video, repeat=False)
         	   VIDEO_CALL[chat_id] = group_call
-        	   await msg.reply_photo(thumb,text="💡 **video streaming started!**\n\n» **join to video chat to watch the video.**, reply_markup=InlineKeyboardMarkup(buttons)")
+        	   await message.reply_photo(thumb,caption=caption,reply_markup=buttons)
         	except Exception as e:
         		await msg.edit(f"**Error** -- `{e}`")
         else:
