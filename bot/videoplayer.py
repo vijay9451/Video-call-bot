@@ -3,15 +3,24 @@ import asyncio
 from pytgcalls import GroupCallFactory
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME
+from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME, THUMB_URL
 from helpers.decorators import authorized_users_only
 from helpers.filters import command
 
-
+thumb = THUMB_URL
 app = Client(SESSION_NAME, API_ID, API_HASH)
 group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM)
 VIDEO_CALL = {}
 
+buttons = [
+            [
+                InlineKeyboardButton("Mute ", callback_data="vmute"),
+                InlineKeyboardButton("Unmute ", callback_data="vunmute"),
+            ],
+            [
+                InlineKeyboardButton("End", callback_data="vend"),
+            ]
+]
 
 @Client.on_message(command(["vstream", f"vstream@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
@@ -28,7 +37,7 @@ async def stream(client, m: Message):
         	chat_id = m.chat.id
         	try:
         	   video = await client.download_media(m.reply_to_message)
-        	   await msg.edit("♻️ **converting video...**")
+        	   await msg.edit("⏳ **Converting video...**")
         	   os.system(f'ffmpeg -i "{video}" -vn -f s16le -ac 2 -ar 48000 -acodec pcm_s16le -filter:a "atempo=0.81" vid-{chat_id}.raw -y')
         	except Exception as e:
         		await msg.edit(f"**🚫 Error** - `{e}`")
@@ -38,7 +47,7 @@ async def stream(client, m: Message):
         	   await group_call.start(chat_id)
         	   await group_call.set_video_capture(video, repeat=False)
         	   VIDEO_CALL[chat_id] = group_call
-        	   await msg.edit("💡 **video streaming started!**\n\n» **join to video chat to watch the video.**")
+        	   await msg.reply_photo(thumb,text="💡 **video streaming started!**\n\n» **join to video chat to watch the video.**, reply_markup=InlineKeyboardMarkup(buttons)")
         	except Exception as e:
         		await msg.edit(f"**Error** -- `{e}`")
         else:
