@@ -48,7 +48,7 @@ async def stream(client, m: Message):
         	   await group_call.start(chat_id)
         	   await group_call.set_video_capture(video, repeat=False)
         	   VIDEO_CALL[chat_id] = group_call
-        	   await message.reply_photo(thumb,caption=caption,reply_markup=buttons)
+        	   await msg.reply_photo(thumb,caption=caption,reply_markup=buttons)
         	except Exception as e:
         		await msg.edit(f"**Error** -- `{e}`")
         else:
