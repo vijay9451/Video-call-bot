@@ -1,5 +1,4 @@
-import os
-from os import getenv
+from os import path, getenv
 from dotenv import load_dotenv
 
 if path.exists("local.env"):
@@ -16,4 +15,4 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "tg_video_stream")
 BOT_USERNAME = getenv("BOT_USERNAME", "veezvidstreambot")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! . ?").split())
-THUMB_URL = os.getenv("THUMB_URL")
+THUMB_URL = getenv("THUMB_URL", None)
