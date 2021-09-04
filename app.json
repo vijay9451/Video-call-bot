@@ -25,15 +25,15 @@
         "required": true
       },
       "BOT_TOKEN": {
-        "description": "Your Telegram Bot Token, get it from @Botfather XD",
+        "description": "Your Telegram Bot Token, get it from @Botfather",
         "required": true
       },
       "BOT_USERNAME": {
-        "description": "Your Telegram Bot Username without @, get it from @Botfather XD",
+        "description": "Your Telegram Bot Username without @, get it from @Botfather ",
         "required": true
       },
       "SESSION_STRING": {
-        "description": "Pyrogram Session String of User Account, get it from @genStr_robot",
+        "description": "Pyrogram Session String of User Account.",
         "required": true
       },
       "CHAT_ID": {
