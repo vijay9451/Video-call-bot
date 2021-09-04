@@ -14,18 +14,20 @@ VIDEO_CALL = {}
 
 buttons = [
             [
-                InlineKeyboardButton("Mute ", callback_data="vmute"),
-                InlineKeyboardButton("Unmute ", callback_data="vunmute"),
+                InlineKeyboardButton("Updates", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("Support", url="https://t.me/slbotzone"),
             ],
             [
-                InlineKeyboardButton("End", callback_data="vend"),
+                InlineKeyboardButton("Close", callback_data="cls"),
             ]
 ]
 caption =f"💡 **video streaming started!**\n\n» **join to video chat to watch the video."
 
 buttons = [
+            [
                 InlineKeyboardButton("Help", callback_data="help"),
-]
+                InlineKeyboardButton("Commands", callback_data="cblist"),
+          ]
 
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
