@@ -7,7 +7,7 @@ from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME, THUMB_URL
 from helpers.decorators import authorized_users_only
 from helpers.filters import command
 
-thumb = THUMB_URL
+thumb =THUMB_URL
 app = Client(SESSION_NAME, API_ID, API_HASH)
 group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM)
 VIDEO_CALL = {}
