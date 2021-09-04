@@ -28,7 +28,7 @@ caption =f"💡 **video streaming started!**\n\n» **join to video chat to watch
 async def stream(client, m: Message):
     replied = m.reply_to_message
     if not replied:
-        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vplay command by replying to the video.")
+        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vplay command by replying to the video.", reply_markup=buttons)
     elif replied.video or replied.document:
         file = replied.video or replied.document
         types = file.mime_type.split("/")
@@ -48,7 +48,7 @@ async def stream(client, m: Message):
         	   await group_call.start(chat_id)
         	   await group_call.set_video_capture(video, repeat=False)
         	   VIDEO_CALL[chat_id] = group_call
-        	   await msg.reply_photo(thumb,caption=caption,reply_markup=buttons)
+        	   await msg.reply_photo(thumb,caption,reply_markup=buttons)
         	except Exception as e:
         		await msg.edit(f"**Error** -- `{e}`")
         else:
