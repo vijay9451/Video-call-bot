@@ -14,7 +14,7 @@ VIDEO_CALL = {}
 
 buttons = [
             [
-                InlineKeyboardButton("Updates", url="https://t.me/sl_bot_zone"),
+                InlineKeyboardButton("Updates ", url="https://t.me/sl_bot_zone"),
                 InlineKeyboardButton("Support", url="https://t.me/slbotzone"),
             ],
             [
