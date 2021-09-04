@@ -50,7 +50,7 @@ async def stream(client, m: Message):
         	   VIDEO_CALL[chat_id] = group_call
         	   await msg.reply_photo(thumb,caption=caption,reply_markup=buttons)
         	except Exception as e:
-        		await msg.edit(f"**Error** -- `{e}`")
+        		print(f"ERROR:\n{str(e)}")
         else:
         	await m.reply(f"🔺**how can i play {mime} ?, please reply to a video or video file** ")
     else:
