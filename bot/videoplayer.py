@@ -23,12 +23,16 @@ buttons = [
 ]
 caption =f"💡 **video streaming started!**\n\n» **join to video chat to watch the video."
 
-@Client.on_message(command(["vstream", f"vstream@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+buttons = [
+                InlineKeyboardButton("Help", callback_data="help"),
+]
+
+@Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def stream(client, m: Message):
     replied = m.reply_to_message
     if not replied:
-        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vstream command by replying to the video.")
+        await m.reply("💭 **Give me a video to stream**\n\n» Use the /vstream command by replying to the video.",reply_markup=button)
     elif replied.video or replied.document:
         file = replied.video or replied.document
         types = file.mime_type.split("/")
@@ -50,7 +54,7 @@ async def stream(client, m: Message):
         	   VIDEO_CALL[chat_id] = group_call
         	   await msg.reply_photo(thumb,caption=caption,reply_markup=buttons)
         	except Exception as e:
-        		print(f"ERROR:\n{str(e)}")
+        		await msg.edit(f"**Error** -- `{e}`")
         else:
         	await m.reply(f"🔺**how can i play {mime} ?, please reply to a video or video file** ")
     else:
