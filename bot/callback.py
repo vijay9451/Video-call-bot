@@ -12,16 +12,16 @@ async def cbguide(_, query: CallbackQuery):
 2.) then promote me as admin and give all permissions except anonymous admin.
 3.) add @{bn} to your group.
 4.) turn on the voice chat first before start to stream video.
-5.) type /vstream (reply to video) to start streaming.
+5.) type /vplay (reply to video) to start streaming.
 6.) type /vstop to end the video streaming.
 
-📝 **note: stream & stop command can only be executed by group admin only!**
+📝 **note: vplay & stop command can only be executed by group admin only!**
 
-⚡ __Maintained by Veez Project Team__""",
+Powerd by @szrosebot""",
     reply_markup=InlineKeyboardMarkup(
       [[
         InlineKeyboardButton(
-          "🏡 Go Back", callback_data="cbstart")
+          "Close", callback_data="cls")
       ]]
     ))
 
@@ -81,7 +81,7 @@ async def cblist(_, query: CallbackQuery):
   await query.edit_message_text(
     f"""📚 All Command List:
 
-» /vstream (reply to video or file) - to stream video
+» /vplay (reply to video or file) - to stream video
 » /vstop - end the video streaming
 » /song (song name) - download song from YT
 » /vsong (video name) - download video from YT
@@ -95,11 +95,11 @@ async def cblist(_, query: CallbackQuery):
 » /truth - check it by yourself
 » /dare - check it by yourself
 
-⚡ __Maintained by Veez Project Team__""",
+Powerd by @szrosebot""",
     reply_markup=InlineKeyboardMarkup(
       [[
         InlineKeyboardButton(
-          "🏡 Go Back", callback_data="cbstart")
+          "close", callback_data="cls")
       ]]
     ))
 
