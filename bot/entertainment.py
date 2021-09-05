@@ -31,7 +31,7 @@ async def chika(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/chika").json()
         results = f"{resp['url']}"
-        return await client.send_video(message.chat.id, video=results)
+        return await client.send_video(message.chat.id)
     except Exception:
         await message.reply_text("failed to get chika from server...")
 
