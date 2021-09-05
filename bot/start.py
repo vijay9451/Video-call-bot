@@ -29,42 +29,43 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("vstart"))
 async def start(client, m: Message):
    if m.chat.type == 'private':
-      await m.reply(f"✨ **Hello there, I am a telegram video streaming bot.**\n\n💭 **I was created to stream videos in group video chats easily.**\n\n❔ **To find out how to use me, please press the help button below** 👇🏻",
-                    reply_markup=InlineKeyboardMarkup(
-                       [[
-                          InlineKeyboardButton(
-                             "❔ HOW TO USE THIS BOT", callback_data="cbguide")
-                       ],[
-                          InlineKeyboardButton(
-                             "🌐 Terms & Condition", callback_data="cbinfo")
-                       ],[
-                          InlineKeyboardButton(
-                             "💬 Group", url="https://t.me/VeezSupportGroup"),
-                          InlineKeyboardButton(
-                             "📣 Channel", url="https://t.me/levinachannel")
-                       ],[
-                          InlineKeyboardButton(
-                             "👩🏻‍💻 Developer", url="https://t.me/dlwrml")
-                       ],[
-                          InlineKeyboardButton(
-                             "📚 All Command List", callback_data="cblist")
-                       ]]
-                    ))
+      await m.reply(f"👋**Hello there, I am a telegram video streaming bot.**\n\n💭 **I was created to stream videos in group video chats easily.**\n\n❔ **To find out how to use me, please press the help button below** ",
+                    reply_markup=InlineKeyboardMarkup[
+    [
+        InlineKeyboardButton(
+            text="🧰 HOW TO USE THIS BOT 🛠 ", callback_data="cbguide"),
+    ],
+    [
+        InlineKeyboardButton(text="🛠 Command List", callback_data="cblist"),
+        InlineKeyboardButton(
+            text="Repo 📦", url=f"https://youtu.be/cLRdwUskzWU"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="💬 support group", url="https://t.me/slbotzone"),
+        InlineKeyboardButton(
+            text="📢 Bot updates ", url="https://t.me/sl_bot_zone"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="⚡️Developer ", url="https://t.me/supunmabot"),
+    ],
+]
    else:
-      await m.reply("**✨ bot is online now ✨**",
+      await m.reply("**I am alive now in your group ✅**",
                           reply_markup=InlineKeyboardMarkup(
                        [[
                           InlineKeyboardButton(
-                             "❔ HOW TO USE THIS BOT", callback_data="cbguide")
+                             "🧰 HOW TO USE THIS BOT 🛠 ", callback_data="cbguide")
                        ],[
                           InlineKeyboardButton(
-                             "🌐 Search Youtube", switch_inline_query='s ')
+                             "🔎 Search Youtube", switch_inline_query='s ')
                        ],[
                           InlineKeyboardButton(
-                             "📚 Command List", callback_data="cblist")
+                             "🛠 Command List", callback_data="cblist")
                        ]]
                     )
       )
@@ -76,15 +77,15 @@ async def alive(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        f"""✅ **bot is running**\n<b>💠 **uptime:**</b> `{uptime}`""",
+        f"""🏃‍♂️**bot is running in your group ✅**\n<b>🤗**uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✨ Group", url=f"https://t.me/VeezSupportGroup"
+                        "💬 support group", url=f"https://t.me/slbotzone"
                     ),
                     InlineKeyboardButton(
-                        "📣 Channel", url=f"https://t.me/levinachannel"
+                        "📢 Bot updates ", url=f"https://t.me/sl_bot_zone"
                     )
                 ]
             ]
@@ -98,8 +99,8 @@ async def ping_pong(client: Client, message: Message):
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
     await m_reply.edit_text(
-        "🏓 `PONG!!`\n"
-        f"⚡️ `{delta_ping * 1000:.3f} ms`"
+        "🙋‍♀️ `PONG!!`\n"
+        f"**Now online**`{delta_ping * 1000:.3f} ms`"
     )
 
 
@@ -110,7 +111,7 @@ async def get_uptime(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "🤖 bot status:\n"
-        f"• **uptime:** `{uptime}`\n"
-        f"• **start time:** `{START_TIME_ISO}`"
+        "🤷‍♂️ bot status:\n"
+        f"• **Time Taken:** `{uptime}`\n"
+        f"• **Service uptime:** `{START_TIME_ISO}`"
     )
