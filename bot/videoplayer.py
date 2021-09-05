@@ -12,7 +12,6 @@ from pyrogram.errors import FloodWait
 from pytgcalls import GroupCallFactory
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME
-from helpers.decorators import authorized_users_only
 from helpers.filters import command
 
 
@@ -61,7 +60,7 @@ async def vstream(client, m: Message):
                 await group_call.join(chat_id)
                 await group_call.start_video(ytvid)
                 VIDEO_CALL[chat_id] = group_call
-                await msg.edit(f"💡 **started [your video]({url})stream !\n\n» join to video chat to watch the youtube stream.**")
+                await msg.edit(f"💡 **started [your video]({url})stream !\n\n» join to video chat to watch the youtube stream.**, disable_web_page_preview=True")       
                 try:
                     STREAM.remove(0)
                 except:
@@ -82,7 +81,7 @@ async def vstream(client, m: Message):
                 await group_call.join(chat_id)
                 await group_call.start_video(live)
                 VIDEO_CALL[chat_id] = group_call
-                await msg.edit(f"💡 **started [live streaming]({live}) !\n\n» join to video chat to watch the live stream.**")
+                await msg.edit(f"💡 **started [live streaming]({live}) !\n\n» join to video chat to watch the live stream.**, disable_web_page_preview=True")
                 try:
                     STREAM.remove(0)
                 except:
@@ -121,7 +120,6 @@ async def vstream(client, m: Message):
 
 
 @Client.on_message(command(["vstop", f"vstop@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
-@authorized_users_only
 async def vstop(client, m: Message):
     chat_id = m.chat.id
     if 0 in STREAM:
