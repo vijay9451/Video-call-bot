@@ -141,4 +141,4 @@ async def vstop(client, m: Message):
         except:
             pass
     except Exception as e:
-        await m.reply_text(f"❌ **something went wrong!** \n\nError: `{e}`")
+        await m.reply_text(f"❌ **something went wrong! ** \n\nError: `{e}`")
