@@ -14,7 +14,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME
 from helpers.decorators import authorized_users_only
 from helpers.filters import command
-
+from telegram import ParseMode
 
 STREAM = {8}
 VIDEO_CALL = {}
