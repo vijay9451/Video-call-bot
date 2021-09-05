@@ -43,7 +43,7 @@ async def vstream(client, m: Message):
     if not media and not ' ' in m.text:
         await m.reply("🙋‍** Give me  video or live stream url or youtube url  to stream the video!\n\n✮✮Use the /vplay command by replying to the video\n\nOr giveing live stream url or youtube url **")
     
-elif ' ' in m.text:
+    elif ' ' in m.text:
         msg = await m.reply_text("🔄 ** Please Wait ⏳ ...🎵 Processing Your Song ... **")
         text = m.text.split(' ', 1)
         url = text[1]
