@@ -34,24 +34,23 @@ app = Client(SESSION_NAME, API_ID, API_HASH)
 group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM)
 
 
-@Client.on_message(command(["vstream", f"vstream@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def vstream(client, m: Message):
     if 10 in STREAM:
-        await m.reply_text("😕 **sorry, there's another video streaming right now**\n\n» **wait for it to finish then try again!**")
+        await m.reply_text("😕 **sorry, there's another video streaming right now**\n\n» **wait for it to finish then try again!\n\nor stop it🤷‍♂️**")
         return
 
     media = m.reply_to_message
     if not media and not ' ' in m.text:
-        await m.reply("🔺 **please reply to a video or live stream url or youtube url to stream the video!**")
-
+        await m.reply("🙋‍** Give me  video or live stream url or youtube url  to stream the video!\n\n✮✮Use the /vplay command by replying to the video\n\nOr giveing live stream url or youtube url **")
     elif ' ' in m.text:
-        msg = await m.reply_text("🔄 **processing youtube url...**")
+        msg = await m.reply_text("🔄 ** Please Wait ⏳ ...🎵 Processing Your Song ... **")
         text = m.text.split(' ', 1)
         url = text[1]
         regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
         match = re.match(regex,url)
         if match:
-            await msg.edit("🔄 **starting youtube streaming...**")
+            await msg.edit("⏰ **starting youtube streaming...**")
             try:
                 info = ydl.extract_info(url, False)
                 ydl.download([url])
@@ -66,7 +65,7 @@ async def vstream(client, m: Message):
                 await group_call.join(chat_id)
                 await group_call.start_video(ytvid)
                 VIDEO_CALL[chat_id] = group_call
-                await msg.edit(f"💡 **started [youtube streaming]({url}) !\n\n» join to video chat to watch the youtube stream.**")
+                await msg.edit(f"💡 **started [your video]({url})stream !\n\n» join to video chat to watch the youtube stream.**")
                 try:
                     STREAM.remove(0)
                 except:
@@ -78,7 +77,7 @@ async def vstream(client, m: Message):
             except Exception as e:
                 await msg.edit(f"❌ **something went wrong!** \n\nError: `{e}`")
         else:
-            await msg.edit("🔄 **starting live streaming...**")
+            await msg.edit("⏰**starting live streaming...**")
             live = url
             chat_id = m.chat.id
             await sleep(2)
@@ -121,7 +120,7 @@ async def vstream(client, m: Message):
         except Exception as e:
             await msg.edit(f"❌ **something went wrong!** \n\nError: `{e}`")
     else:
-        await m.reply_text("🔺 **please reply to a video or live stream url or youtube url to stream the video!**")
+        await m.reply_text("🙋‍** Give me  video or live stream url or youtube url  to stream the video!\n\n✮✮Use the /vplay command by replying to the video\n\nOr giveing live stream url or youtube url **")
         return
 
 
