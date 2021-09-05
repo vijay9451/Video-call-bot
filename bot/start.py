@@ -53,7 +53,7 @@ async def start(client, m: Message):
     [
         InlineKeyboardButton(text="⚡️Developer ", url="https://t.me/supunmabot"),
     ],
-]
+                    ]]
    else:
       await m.reply("**I am alive now in your group ✅**",
                           reply_markup=InlineKeyboardMarkup(
