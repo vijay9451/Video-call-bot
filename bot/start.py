@@ -33,7 +33,7 @@ async def _human_time_duration(seconds):
 async def start(client, m: Message):
    if m.chat.type == 'private':
       await m.reply(f"👋**Hello there, I am a telegram video streaming bot.**\n\n💭 **I was created to stream videos in group video chats easily.**\n\n❔ **To find out how to use me, please press the help button below** ",
-                    reply_markup=InlineKeyboardMarkup[
+                    reply_markup=InlineKeyboardMarkup(
     [
         InlineKeyboardButton(
             text="🧰 HOW TO USE THIS BOT 🛠 ", callback_data="cbguide"),
@@ -53,7 +53,7 @@ async def start(client, m: Message):
     [
         InlineKeyboardButton(text="⚡️Developer ", url="https://t.me/supunmabot"),
     ],
-                    ]]
+                    ))
    else:
       await m.reply("**I am alive now in your group ✅**",
                           reply_markup=InlineKeyboardMarkup(
