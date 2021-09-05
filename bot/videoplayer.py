@@ -12,6 +12,7 @@ from pyrogram.errors import FloodWait
 from pytgcalls import GroupCallFactory
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME
+from helpers.decorators import authorized_users_only
 from helpers.filters import command
 
 
@@ -34,6 +35,7 @@ group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.
 
 
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@authorized_users_only
 async def vstream(client, m: Message):
     if 1 in STREAM:
         await m.reply_text("😕 **sorry, there's another video streaming right now**\n\n» **wait for it to finish then try again!**")
@@ -125,6 +127,7 @@ async def vstream(client, m: Message):
 
 
 @Client.on_message(command(["vstop", f"vstop@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@authorized_users_only
 async def vstop(client, m: Message):
     chat_id = m.chat.id
     if 0 in STREAM:
