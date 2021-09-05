@@ -34,20 +34,20 @@ async def give_sysinfo(client, message):
     psutil.disk_io_counters()
     disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
     cpu_len = len(psutil.Process().cpu_affinity())
-    somsg = f"""**System Info**
+    somsg = f"""**System Info of rose video player**
     
-**PlatForm :** `{splatform}`
-**PlatForm - Release :** `{platform_release}`
-**PlatFork - Version :** `{platform_version}`
-**Architecture :** `{architecture}`
-**Hostname :** `{hostname}`
-**IP :** `{ip_address}`
-**Mac :** `{mac_address}`
-**Processor :** `{processor}`
-**Ram : ** `{ram}`
-**CPU :** `{cpu_len}`
-**CPU FREQ :** `{cpu_freq}`
-**DISK :** `{disk}`
+**📲PlatForm :** `{splatform}`
+**💡PlatForm - Release :** `{platform_release}`
+**💾PlatFork - Version :** `{platform_version}`
+**⌚️Architecture :** `{architecture}`
+**🔋Hosting service :** `{hostname}`
+**🧭IP :** `{ip_address}`
+**⏲Mac :** `{mac_address}`
+**📟Processor :** `{processor}`
+**🖥Ram : ** `{ram}`
+**💻CPU :** `{cpu_len}`
+**💽CPU FREQ :** `{cpu_freq}`
+**📀DISK :** `{disk}`
     """
     await message.reply(somsg)
 
