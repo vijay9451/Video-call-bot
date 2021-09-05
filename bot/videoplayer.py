@@ -16,9 +16,8 @@ from helpers.decorators import authorized_users_only
 from helpers.filters import command
 
 
-STREAM = {10}
+STREAM = {6}
 VIDEO_CALL = {}
-
 
 ydl_opts = {
         "format": "best",
