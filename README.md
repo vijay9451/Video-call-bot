@@ -36,6 +36,7 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
 - 
 🏷️ --**Admin Only Commands**-- :
 
+- ` /stream`- video url
 - `/stream` - stream the replied video
 - `/mute` - mute the userbot in vc
 - `/unmute` - unmute the userbot in vc
