@@ -80,7 +80,7 @@ The easy way to host this bot
   <summary><b>Credits 💖</b></summary>
 
 
-- [Levina](https://github.com/levina-lab) first coder
+- [AsmSafone](https://github.com/AsmSafone/VideoPlayerBot) first coder
 - [vivek-tp](https://github.com/vivek-tp) Fsub added
 - [MarshalX](https://github.com/MarshalX) for [pytgcalls](https://github.com/MarshalX)
 - [Dan](https://github.com/delivrance) for [Pyrogram](https://github.com/pyrogram) 
