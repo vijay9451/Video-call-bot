@@ -71,7 +71,7 @@ async def start(client, m: Message):
       )
 
 
-@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["vhelp", f"vhelp@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def alive(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
@@ -93,25 +93,30 @@ async def alive(client: Client, message: Message):
       )
 
 
-@Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["alive", f"alive@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("pinging...")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        "🙋‍♀️ `PONG!!`\n"
-        f"**Now online**`{delta_ping * 1000:.3f} ms`"
-    )
-
-
-@Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
-@sudo_users_only
-async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
-    await message.reply_text(
+    m_reply = await message.reply_text("pinging...")
+    delta_ping = time() - start
+    await m_reply.edit_text(
         "🤷‍♂️ bot status:\n"
+        f"🙋‍♀️ `PONG!!`\n"
+        f"✮✮ **Now online**`{delta_ping * 1000:.3f} ms`\n"
         f"✮✮ **Time Taken:** `{uptime}`\n"
-        f"✮✮ **Service uptime:** `{START_TIME_ISO}`"
+        f"✮✮ **Service uptime:** `{START_TIME_ISO}`",
+        reply_markup=InlineKeyboardMarkup(
+                       [[
+                          InlineKeyboardButton(
+                             "🧰 HOW TO USE THIS BOT 🛠 ", callback_data="cbguide")
+                       ],[
+                          InlineKeyboardButton(
+                             "🔎 Search Youtube",  switch_inline_query_current_chat="")
+                       ],[
+                          InlineKeyboardButton(
+                             "🛠 Command List", callback_data="cblist")
+                       ]]
+                    )
     )
