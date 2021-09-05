@@ -17,11 +17,11 @@ async def cbguide(_, query: CallbackQuery):
 
 📝 **note: stream & stop command can only be executed by group admin only!**
 
-⚡ __Maintained by Veez Project Team__""",
+Powerd by @szrosebot""",
     reply_markup=InlineKeyboardMarkup(
       [[
         InlineKeyboardButton(
-          "🏡 Go Back", callback_data="cbstart")
+          "Close", callback_data="cls")
       ]]
     ))
 
@@ -102,11 +102,11 @@ async def cblist(_, query: CallbackQuery):
 » /uptime - check bot uptime status
 » /sysinfo - check bot system information
 
-⚡ __Maintained by Veez Project Team__""",
+Powerd by @szrosebot""",
     reply_markup=InlineKeyboardMarkup(
       [[
         InlineKeyboardButton(
-          "🏡 Go Back", callback_data="cbstart")
+          "close", callback_data="cls")
       ]]
     ))
 
