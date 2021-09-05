@@ -71,7 +71,7 @@ async def start(client, m: Message):
       )
 
 
-@Client.on_message(command(["alive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def alive(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
@@ -79,18 +79,18 @@ async def alive(client: Client, message: Message):
     await message.reply_text(
         f"""🏃‍♂️**bot is running in your group ✅**\n<b>🤗**uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "💬 support group", url=f"https://t.me/slbotzone"
-                    ),
-                    InlineKeyboardButton(
-                        "📢 Bot updates ", url=f"https://t.me/sl_bot_zone"
+                       [[
+                          InlineKeyboardButton(
+                             "🧰 HOW TO USE THIS BOT 🛠 ", callback_data="cbguide")
+                       ],[
+                          InlineKeyboardButton(
+                             "🔎 Search Youtube",  switch_inline_query_current_chat="")
+                       ],[
+                          InlineKeyboardButton(
+                             "🛠 Command List", callback_data="cblist")
+                       ]]
                     )
-                ]
-            ]
-        )
-    )
+      )
 
 
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
