@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 from pytgcalls import GroupCallFactory
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from config import API_ID, API_HASH, SESSION_NAME, BOT_USERNAME
 from helpers.decorators import authorized_users_only
 from helpers.filters import command
