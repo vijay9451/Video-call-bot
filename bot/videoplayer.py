@@ -36,9 +36,9 @@ group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def vstream(client, m: Message):
     media = m.reply_to_message
-    if not media and not ' ' in m.text:
+    if not media and not url in m.text:
         await m.reply("🙋‍** Give me  video or live stream url or youtube url  to stream the video!\n\n✮✮Use the /vplay command by replying to the video\n\nOr giveing live stream url or youtube url **")
-    elif ' ' in m.text:
+    elif url in m.text:
         msg = await m.reply_text("🔄 ** Please Wait ⏳ ...🎵 Processing Your Song ... **")
         text = m.text.split(' ', 1)
         url = text[1]
@@ -60,7 +60,7 @@ async def vstream(client, m: Message):
                 await group_call.join(chat_id)
                 await group_call.start_video(ytvid)
                 VIDEO_CALL[chat_id] = group_call
-                await msg.edit(f"💡 **started [your video]({url})stream !\n\n» join to video chat to watch the youtube stream.**, disable_web_page_preview=True")       
+                await msg.edit(f"💡 **started [your video]({url})stream !\n\n» join to video chat to watch the youtube stream.**")       
                 try:
                     STREAM.remove(0)
                 except:
