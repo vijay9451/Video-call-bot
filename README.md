@@ -1,24 +1,31 @@
-### TG -VIDEO STREAM BOT
+<h1> TG -VIDEO STREAM BOT </h1>
 
 telegram bot project for streaming video on telegram video chat, powered by [tgcalls](https://github.com/MarshalX/tgcalls) and [pyrogram](https://github.com/pyrogram/pyrogram)
 
+<p align="center"><a href="https://t.me/szrosebot"><img src="https://telegra.ph/file/fbaa59ace54321ed1212a.jpg" width="300"></a></p>
 <p align="center">
-  <a href="https://github.com/youtubeslgeekshow/Video-call-bot/stargazers">
-    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?style=social">
+    <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=green" /></a>
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /></a>
+    <a href="https://app.codacy.com/gh/youtubeslgeekshow/Video-call-bot/dashboard"> <img src="https://img.shields.io/codacy/grade/a723cb464d5a4d25be3152b5d71de82d?color=green&logo=codacy&style=flat-square" alt="Codacy" /></a><br>
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot"> <img src="https://img.shields.io/github/repo-size/youtubeslgeekshow/Video-call-bot?color=green&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot/commits/main"> <img src="https://img.shields.io/github/last-commit/youtubeslgeekshow/Video-call-bot?color=green&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot/issues"> <img src="https://img.shields.io/github/issues/youtubeslgeekshow/Video-call-bot?color=green&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot/network/members"> <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?color=green&logo=github&logoColor=blue&style=flat-square" /></a>  
+    <a href="https://github.com/youtubeslgeekshow/Video-call-bot/network/members"> <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?color=green&logo=github&logoColor=blue&style=flat-square" /></a>  
+</p>
 
-  </a>
-  
+
+<p align="center">
   <a href="https://github.com/youtubeslgeekshow/Video-call-bot/fork">
-    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?label=Fork&style=social">
+    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?color=dark&label=FORK&logo=github&style=plastic"width="100" height="35"> 
+  </a>
+  <a href="https://github.com/youtubeslgeekshow/Video-call-bot/stars">
+    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?color=dark&label=STARS&logo=github&style=plastic"width="100" height="35">
+  </a>
+</p>  
 
-  </a>  
-</p>
-
-<p align="center">
-  <img src="https://telegra.ph/file/fbaa59ace54321ed1212a.jpg">
-</p>
-
-## 🛠 Available Commands:
+## Repo Stats
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=youtubeslgeekshow&repo=Video-call-bot&theme=dark)
 
 🏷️ --**Setting Up**-- :
 - 1.) first, add me to your group.
@@ -28,34 +35,41 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
 - 5.) type /stream (reply to video) to start streaming.
 - 6.) type /stop to end the video streaming.
 
+## 🛠 Available Commands:
+
 🏷️ --**Common Commands**-- :
 
--`/start` - start the bot
-- `/help` - show this help message
-- `/video` [name] - download the video
-- 
+COMMAND | FUNCTION
+:--- | :---
+`/start` | start bot
+`/help`| get help
+`/video` [name] | download the video
+`/alive` | `inline search` commands `help`
+
 🏷️ --**Admin Only Commands**-- :
 
-- ` /stream`- video url
-- `/stream` - stream the replied video
-- `/mute` - mute the userbot in vc
-- `/unmute` - unmute the userbot in vc
-- `/endstream` - end stream and left vc
-
+COMMAND | FUNCTION
+:--- | :---
+` /vplay` | video url
+`/vplay`| stream the replied video
+`/mute` | mute the userbot in vc
+`/unmute` | unmute the userbot in vc
+`/vstop`| end stream and left vc
 
 ## 🍁 Get STRING_SESSION from below:
 
 Get pyrogram (p)  `SESSION` from here:
 
-[![Run on Repl.it](https://repl.it/badge/github/ChankitSaini/GenerateStringSession)](https://replit.com/@vcsession/VCPlayBot?v=1)
 
- <h2> <details>
-  <summary><b>Deploymant</b></summary>
+<p align="center"><a href="https://replit.com/@vcsession/VCPlayBot?v=1"><img src="https://img.shields.io/badge/REPLIT-SESSION-yellow?style=plastic&logo=replit&logoColor=red"width="270" height="40" /></a></p>
+
+
 
 ##  deploy to Heroku 
 The easy way to host this bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot)
+
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot"><img src="https://img.shields.io/badge/HEROKU-DEPLOY-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
 
 # Deploy On Railway
 [![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/youtubeslgeekshow/Video-call-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
@@ -74,14 +88,13 @@ The easy way to host this bot
 - sudo nano config.py #Fill it with your variables value.
 - python3 -m bot
 ```
- </details> </h2>
+ </details> 
 
  <h3> <details>
   <summary><b>Credits 💖</b></summary>
 
 
-- [AsmSafone](https://github.com/AsmSafone/VideoPlayerBot) first coder
-- [vivek-tp](https://github.com/vivek-tp) Fsub added
+- [levina-lab](https://github.com/levina-lab/video-stream) first coder
 - [MarshalX](https://github.com/MarshalX) for [pytgcalls](https://github.com/MarshalX)
 - [Dan](https://github.com/delivrance) for [Pyrogram](https://github.com/pyrogram) 
 </details> </h3>
