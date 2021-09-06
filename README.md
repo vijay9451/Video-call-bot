@@ -28,10 +28,6 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
   </a>  
 </p>
 
-
-
-## 🛠 Available Commands:
-
 🏷️ --**Setting Up**-- :
 - 1.) first, add me to your group.
 - 2.) then promote me as admin and give all permissions except anonymous admin.
@@ -40,20 +36,26 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
 - 5.) type /stream (reply to video) to start streaming.
 - 6.) type /stop to end the video streaming.
 
+## 🛠 Available Commands:
+
 🏷️ --**Common Commands**-- :
 
--`/start` - start the bot
-- `/help` - show this help message
-- `/video` [name] - download the video
-- 
+COMMAND | FUNCTION
+:--- | :---
+`/start` | start bot
+`/help`| get help
+`/video` [name] | download the video
+`/alive` | `inline search` commands `help`
+
 🏷️ --**Admin Only Commands**-- :
 
-- ` /vplay`- video url
-- `/vplay` - stream the replied video
-- `/mute` - mute the userbot in vc
-- `/unmute` - unmute the userbot in vc
-- `/vstop` - end stream and left vc
-
+COMMAND | FUNCTION
+:--- | :---
+` /vplay` | video url
+`/vplay`| stream the replied video
+`/mute` | mute the userbot in vc
+`/unmute` | unmute the userbot in vc
+`/vstop`| end stream and left vc
 
 ## 🍁 Get STRING_SESSION from below:
 
@@ -61,13 +63,16 @@ Get pyrogram (p)  `SESSION` from here:
 
 [![Run on Repl.it](https://repl.it/badge/github/ChankitSaini/GenerateStringSession)](https://replit.com/@vcsession/VCPlayBot?v=1)
 
+<p align="center"><a href="https://replit.com/@vcsession/VCPlayBot?v=1"><img src="https://img.shields.io/badge/REPLIT-SESSION-yellow?style=plastic&logo=replit&logoColor=red"width="270" height="40" /></a></p>
+
  <h2> <details>
-  <summary><b>Deploymant</b></summary>
+    <summary><b>Deploymant</b></summary></h2>
 
 ##  deploy to Heroku 
 The easy way to host this bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot)
+
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot"><img src="https://img.shields.io/badge/HEROKU-DEPLOY-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
 
 # Deploy On Railway
 [![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/youtubeslgeekshow/Video-call-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
@@ -86,7 +91,7 @@ The easy way to host this bot
 - sudo nano config.py #Fill it with your variables value.
 - python3 -m bot
 ```
- </details> </h2>
+ </details> 
 
  <h3> <details>
   <summary><b>Credits 💖</b></summary>
