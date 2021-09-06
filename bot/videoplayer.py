@@ -31,7 +31,7 @@ group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def vstream(_, m: Message):
     if 1 in STREAM:
-        await m.reply_text("😕 **sorry, there's another video streaming right now**\n\n» **wait for it to finish then try again!**")
+        await m.reply_text("😕 **sorry,there's another video streaming right now**\n\n» **wait for it to finish then try again!**")
         return
 
     media = m.reply_to_message
