@@ -1,4 +1,4 @@
-### TG -VIDEO STREAM BOT
+<h1> TG -VIDEO STREAM BOT </h1>
 
 telegram bot project for streaming video on telegram video chat, powered by [tgcalls](https://github.com/MarshalX/tgcalls) and [pyrogram](https://github.com/pyrogram/pyrogram)
 
@@ -61,12 +61,10 @@ COMMAND | FUNCTION
 
 Get pyrogram (p)  `SESSION` from here:
 
-[![Run on Repl.it](https://repl.it/badge/github/ChankitSaini/GenerateStringSession)](https://replit.com/@vcsession/VCPlayBot?v=1)
 
 <p align="center"><a href="https://replit.com/@vcsession/VCPlayBot?v=1"><img src="https://img.shields.io/badge/REPLIT-SESSION-yellow?style=plastic&logo=replit&logoColor=red"width="270" height="40" /></a></p>
 
- <h2> <details>
-    <summary><b>Deploymant</b></summary></h2>
+
 
 ##  deploy to Heroku 
 The easy way to host this bot
