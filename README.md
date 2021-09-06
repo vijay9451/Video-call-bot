@@ -17,13 +17,15 @@ telegram bot project for streaming video on telegram video chat, powered by [tgc
 
 <p align="center">
   <a href="https://github.com/youtubeslgeekshow/Video-call-bot/fork">
-    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?color=black&label=FORK&logo=github&style=plastic"width="100" height="35"> 
+    <img src="https://img.shields.io/github/forks/youtubeslgeekshow/Video-call-bot?color=dark&label=FORK&logo=github&style=plastic"width="100" height="35"> 
   </a>
   <a href="https://github.com/youtubeslgeekshow/Video-call-bot/stars">
-    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?color=black&label=STARS&logo=github&style=plastic"width="100" height="35">
+    <img src="https://img.shields.io/github/stars/youtubeslgeekshow/Video-call-bot?color=dark&label=STARS&logo=github&style=plastic"width="100" height="35">
   </a>
 </p>  
 
+## Repo Stats
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=youtubeslgeekshow&repo=Video-call-bot&theme=dark)
 
 🏷️ --**Setting Up**-- :
 - 1.) first, add me to your group.
