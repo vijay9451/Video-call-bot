@@ -69,10 +69,10 @@ Get pyrogram (p)  `SESSION` from here:
 The easy way to host this bot
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/Video-call-bot"><img src="https://img.shields.io/badge/HEROKU-DEPLOY-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/vijay9451/Video-call-bot"><img src="https://img.shields.io/badge/HEROKU-DEPLOY-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
 
 # Deploy On Railway
-[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/youtubeslgeekshow/Video-call-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
+[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/vijay9451/Video-call-bot&envs=API_ID,API_HASH,BOT_TOKEN,SESSION_NAME)
   
 ## VPS Deployment
 ```
